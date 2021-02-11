@@ -1,50 +1,81 @@
 <template>
   <div class="container">
-
+    <div class="box">
+      <div class="row justify-content-between">
+        <div class="col col-auto">
+         <search placeholder="Search for a country ..." v-model="searchParameter"/>
+        </div>
+        <div class="col col-auto">
+          <custom-select :options="regions" v-model="regionFilter" title="Filter by Region" />
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="row">
+        <div class="col col-6 mb-74" :class="$style.mb74" v-for="country in showCountries" :key="country.name" >
+          <card :country="country" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Search from "../components/Search";
+import Card from "../components/Layouts/Card";
+import CustomSelect from "../components/CustomSelect";
+export default {
+  components: {CustomSelect, Card, Search},
+  async asyncData({$axios}){
+    const countries = await $axios.get('all?fields=name;population;capital;region;currencies;flag;alpha3Code')
+    console.log(countries)
+    return {
+      countries: countries.data,
+      showCountries: countries.data
+    }
+  },
+  data(){
+    return{
+      searchParameter: '',
+      regions: [
+        'All',
+        'Africa',
+        'Americas',
+        'Asia',
+        'Europe',
+        'Oceania'
+      ],
+      regionFilter: ''
+    }
+  },
+  watch:{
+    searchParameter(newVal){
+      const filter = this.countries.filter(country => {
+        return country.name.toLowerCase().includes(newVal) || country.capital.toLowerCase().includes(newVal)
+      })
+      this.showCountries = {...filter}
+      // console.log(filter)
+    },
+    regionFilter(newVal){
+      if(newVal === 'All') {
+        this.showCountries = {...this.countries}
+        return
+      }
+      const filter = this.countries.filter(country => {
+        return country.region === newVal
+      })
+      console.log(filter)
+      this.showCountries = {...filter}
+    }
+  },
+  mounted(){
+    console.log(this.$hello)
+  }
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style module>
+  .mb74{
+    margin-bottom: 74px;
+  }
 </style>

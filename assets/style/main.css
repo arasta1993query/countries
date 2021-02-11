@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --color: #111517;
+  --bg: #fafafa;
+  --bg-secondary: #ffffff;
+  --input: #858585;
+}
+
+.dark-mode {
+  --color: #ffffff;
+  --bg: #202c37;
+  --bg-secondary: #2b3945;
+  --input: #dce8f4;
+}
+
+a{
+  text-decoration: none;
+  outline: none;
+}
+
+
+body{
+  background: var(--bg);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+}
+
+p{
+  color: var(--color);
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.text{
+  font-size: 14px;
+}
+
+.medium{
+  font-weight: 600;
+}
+
+.bold{
+  font-weight: 800;
+}
+
+/*.container{*/
+/*  display: block;*/
+/*  padding: 24px 80px;*/
+/*  width: 100%;*/
+/*  margin-right: auto;*/
+/*  margin-left: auto;*/
+/*}*/
+
+.box{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.row{
+  margin-right: -37px !important;
+  margin-left: -37px !important;
+}
+
+/*.row.space-between{*/
+/*  justify-content: space-between;*/
+/*}*/
+
+/*.row.align-center{*/
+/*  align-items: center;*/
+/*}*/
+
+.col{
+  padding-right: 37px !important;
+  padding-left: 37px !important;
+}
+
+
+/*.col {*/
+/*  -ms-flex-preferred-size: 0;*/
+/*  flex-basis: 0;*/
+/*  -ms-flex-positive: 1;*/
+/*  flex-grow: 1;*/
+/*  min-width: 0;*/
+/*  max-width: 100%;*/
+/*}*/
+
+/*.col-auto{*/
+/*  flex: 0 0 auto;*/
+/*  width: auto;*/
+/*  max-width: 100%;*/
+/*}*/
+
+/*.col-3{*/
+/*  -ms-flex: 0 0 25%;*/
+/*  flex: 0 0 25%;*/
+/*  max-width: 25%;*/
+/*}*/
+
+/*.col-6{*/
+/*  -ms-flex: 0 0 50%;*/
+/*  flex: 0 0 50%;*/
+/*  max-width: 50%;*/
+/*}*/
+
+
+.box-shadow{
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,.2);
+}
+
+.mb-74{
+  margin-bottom: 74px;
+}

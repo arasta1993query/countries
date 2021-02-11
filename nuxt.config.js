@@ -12,15 +12,21 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {src: "https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"}
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/style/main.css',
+    '@/assets/style/bootstrap-grid.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -28,12 +34,17 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/color-mode'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios'
   ],
 
+  axios: {
+    baseURL: 'https://restcountries.eu/rest/v2/', // Used as fallback if no runtime config is provided
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
