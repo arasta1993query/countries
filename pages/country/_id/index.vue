@@ -63,7 +63,6 @@
     async asyncData({$axios, route}) {
       const country = await $axios.get(`alpha/${route.params.id}`)
 
-      console.log(country)
 
       let bordersName
 
@@ -85,9 +84,6 @@
       back(){
         this.$router.back()
       }
-    },
-    mounted(){
-      console.log(this.$route)
     }
   }
 </script>

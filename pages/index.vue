@@ -28,7 +28,6 @@ export default {
   components: {CustomSelect, Card, Search},
   async asyncData({$axios}){
     const countries = await $axios.get('all?fields=name;population;capital;region;currencies;flag;alpha3Code')
-    console.log(countries)
     return {
       countries: countries.data,
       showCountries: countries.data
@@ -54,7 +53,6 @@ export default {
         return country.name.toLowerCase().includes(newVal) || country.capital.toLowerCase().includes(newVal)
       })
       this.showCountries = {...filter}
-      // console.log(filter)
     },
     regionFilter(newVal){
       if(newVal === 'All') {
@@ -64,12 +62,8 @@ export default {
       const filter = this.countries.filter(country => {
         return country.region === newVal
       })
-      console.log(filter)
       this.showCountries = {...filter}
     }
-  },
-  mounted(){
-    console.log(this.$hello)
   }
 }
 </script>
