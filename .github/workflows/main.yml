@@ -1,0 +1,16 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.0.0
+        with:
+          heroku_api_key: ${{secrets.HEROKU}}
+          heroku_app_name: "aqueous-anchorage-91622"
+          heroku_email: "alias1371@gmail.com"
+          usedocker: true
