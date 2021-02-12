@@ -24,9 +24,11 @@
 import Search from "../components/Search";
 import Card from "../components/Layouts/Card";
 import CustomSelect from "../components/CustomSelect";
+import MiniSearch from 'minisearch'
 export default {
   components: {CustomSelect, Card, Search},
   async asyncData({$axios}){
+
     const countries = await $axios.get('all?fields=name;population;capital;region;currencies;flag;alpha3Code')
     return {
       countries: countries.data,

@@ -11,6 +11,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
     "core-js": "^3.8.3",
+    "minisearch": "^3.0.2",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
