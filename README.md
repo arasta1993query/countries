@@ -26,6 +26,8 @@ $ yarn generate
 
 # You can go to country detail by /country/alpha3Code of country
 
+# App handle search on country name and capital 
+
 ```
 
 
