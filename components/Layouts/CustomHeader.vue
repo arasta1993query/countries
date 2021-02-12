@@ -12,7 +12,7 @@
             <moon :class="$style.moonIcon" v-if="cssMode"/>
             <moon-outline :class="$style.moonIcon" v-else/>
             <p class="text medium">
-              {{ cssMode ? 'Dark Mode' : 'Light Mode' }}A
+              {{ cssMode ? 'Dark Mode' : 'Light Mode' }}
             </p>
           </div>
         </div>
