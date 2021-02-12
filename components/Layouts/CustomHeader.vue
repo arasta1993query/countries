@@ -3,9 +3,9 @@
     <div class="container">
       <div class="row space-between align-center">
         <div class="col">
-          <p class="title">
+          <nuxt-link to="/" class="title">
             Where in the world?
-          </p>
+          </nuxt-link>
         </div>
         <div class="col col-auto" @click="cssModeToggle">
           <div class="d-flex align-items-center" :class="$style.cssMode">
