@@ -17,4 +17,8 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+# deploy app on heroku
+ https://countries-test-alibaba.herokuapp.com/
+

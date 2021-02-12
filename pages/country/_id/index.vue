@@ -9,10 +9,10 @@
       </div>
       <div class="box">
         <div class="row">
-          <div class="col col-12">
+          <div class="col col-24 col-lg-12 mb-5 mb-lg-0">
             <image-container :src="country.flag"/>
           </div>
-          <div class="col col-12">
+          <div class="col col-24 col-lg-12">
             <div class="d-flex flex-column justify-content-center" style="height: 100%">
              <div>
                <div :class="$style.title">

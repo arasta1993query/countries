@@ -2,7 +2,7 @@
   <div class="container">
     <div class="box">
       <div class="row justify-content-between">
-        <div class="col col-auto">
+        <div class="col col-24 col-lg-auto mb-4 mb-lg-0">
          <search placeholder="Search for a country ..." v-model="searchParameter"/>
         </div>
         <div class="col col-auto">
@@ -12,7 +12,7 @@
     </div>
     <div class="box">
       <div class="row">
-        <div class="col col-6 mb-74" :class="$style.mb74" v-for="country in showCountries" :key="country.name" >
+        <div class="col col-24 col-lg-6 mb-74" :class="$style.mb74" v-for="country in showCountries" :key="country.name" >
           <card :country="country" />
         </div>
       </div>

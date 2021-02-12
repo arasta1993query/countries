@@ -47,4 +47,10 @@
     z-index: 10;
     color: var(--color);
   }
+
+  @media (max-width: 400px) {
+    .search {
+      width: 100%;
+    }
+  }
 </style>
