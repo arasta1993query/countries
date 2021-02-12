@@ -144,7 +144,7 @@
   .ionIcon{
     width: 18px;
     height: 18px;
-    color: var(--color);
+    /*color: var(--color);*/
     margin-right: 8px;
   }
 

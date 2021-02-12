@@ -8,7 +8,7 @@
           </p>
         </div>
         <div class="col col-auto" @click="cssModeToggle">
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center" :class="$style.cssMode">
             <moon :class="$style.moonIcon" v-if="cssMode"/>
             <moon-outline :class="$style.moonIcon" v-else/>
             <p class="text medium">
@@ -47,6 +47,10 @@
     background: var(--bg-secondary);
     width: 100%;
     align-items: center;
+  }
+
+  .cssMode{
+    cursor: pointer;
   }
 
   .moonIcon{
